@@ -23,7 +23,7 @@ const HomePage = () => {
           
           {isLoading ? (
             <div className="loading-spinner">
-              <p>Loading game assets...</p>
+              <p style={{ color: '#000000', fontWeight: 'bold' }}>Loading game assets...</p>
             </div>
           ) : (
             <div className="menu-buttons">

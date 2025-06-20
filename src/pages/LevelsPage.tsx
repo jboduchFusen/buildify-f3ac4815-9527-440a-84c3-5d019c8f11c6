@@ -16,7 +16,7 @@ const LevelsPage = () => {
 
   return (
     <div className="levels-page">
-      <div className="container">
+      <div className="container" style={{ textAlign: 'center' }}>
         <h1>Select Level</h1>
         <Link to="/">
           <button className="secondary-button back-button">Back to Menu</button>
@@ -27,11 +27,12 @@ const LevelsPage = () => {
             <div 
               key={level.id} 
               className={`level-card ${index + 1 > unlockedLevels ? 'locked' : ''}`}
+              style={{ border: '2px solid #000000' }}
             >
-              <h3>Level {index + 1}</h3>
-              <p>{level.name}</p>
-              <p>Cats: {level.catsCount}</p>
-              <p>Dogs: {level.dogs.length}</p>
+              <h3 style={{ color: '#000000' }}>Level {index + 1}</h3>
+              <p style={{ color: '#000000' }}>{level.name}</p>
+              <p style={{ color: '#000000' }}>Cats: {level.catsCount}</p>
+              <p style={{ color: '#000000' }}>Dogs: {level.dogs.length}</p>
               {index + 1 <= unlockedLevels ? (
                 <Link to={`/game/${level.id}`}>
                   <button className="primary-button">Play</button>
