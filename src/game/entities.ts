@@ -7,22 +7,19 @@ const CAT_TYPES = {
     radius: 30,
     density: 0.004,
     restitution: 0.8,
-    color: '#FF6B6B',
-    image: '/src/assets/cat-normal.png'
+    color: '#FF6B6B'
   },
   heavy: {
     radius: 40,
     density: 0.008,
     restitution: 0.4,
-    color: '#FF9E6B',
-    image: '/src/assets/cat-heavy.png'
+    color: '#FF9E6B'
   },
   bouncy: {
     radius: 25,
     density: 0.003,
     restitution: 1.2,
-    color: '#6BFFB8',
-    image: '/src/assets/cat-bouncy.png'
+    color: '#6BFFB8'
   }
 };
 
@@ -36,12 +33,7 @@ export const createCat = ({ x, y, type = 'normal' }: { x: number, y: number, typ
     restitution: catProps.restitution,
     frictionAir: 0.005,
     render: {
-      fillStyle: catProps.color,
-      sprite: {
-        texture: catProps.image,
-        xScale: catProps.radius * 0.06,
-        yScale: catProps.radius * 0.06
-      }
+      fillStyle: catProps.color
     }
   });
 };
@@ -73,12 +65,7 @@ export const createDog = ({ x, y, size = 'medium' }: { x: number, y: number, siz
     density,
     restitution: 0.2,
     render: {
-      fillStyle: '#8C6B4F',
-      sprite: {
-        texture: '/src/assets/dog.png',
-        xScale: width * 0.02,
-        yScale: height * 0.02
-      }
+      fillStyle: '#8C6B4F'
     }
   });
 };
