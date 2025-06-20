@@ -94,6 +94,10 @@ button {
   transform: translateY(-5px);
 }
 
+.level-card.locked {
+  opacity: 0.7;
+}
+
 .game-over-modal {
   position: fixed;
   top: 50%;
@@ -121,7 +125,20 @@ button {
   font-size: 24px;
   font-weight: bold;
   color: white;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 8px 16px;
+  border-radius: 8px;
+}
+
+.cats-left {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 8px 16px;
+  border-radius: 8px;
 }
 
 .slingshot {
@@ -131,4 +148,109 @@ button {
   width: 100px;
   height: 200px;
   z-index: 5;
+}
+
+.home-page {
+  background: linear-gradient(135deg, #87ceeb 0%, #4ecdc4 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-section {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.game-title {
+  font-size: 48px;
+  color: var(--primary);
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.game-subtitle {
+  font-size: 20px;
+  color: var(--text);
+  margin-bottom: 30px;
+}
+
+.menu-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.play-button, .tutorial-button {
+  font-size: 18px;
+  padding: 15px 30px;
+}
+
+.levels-page {
+  background: linear-gradient(135deg, #87ceeb 0%, #4ecdc4 100%);
+  min-height: 100vh;
+  padding: 40px 0;
+}
+
+.levels-page h1 {
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.back-button {
+  margin-bottom: 20px;
+}
+
+.levels-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.not-found-page {
+  background: linear-gradient(135deg, #87ceeb 0%, #4ecdc4 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.not-found-page h1 {
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 20px;
+}
+
+.not-found-page p {
+  color: white;
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.game-controls {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.modal-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.loading-spinner {
+  margin: 30px 0;
+  color: var(--text);
 }

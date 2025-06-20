@@ -33,7 +33,9 @@ export const createCat = ({ x, y, type = 'normal' }: { x: number, y: number, typ
     restitution: catProps.restitution,
     frictionAir: 0.005,
     render: {
-      fillStyle: catProps.color
+      fillStyle: catProps.color,
+      strokeStyle: '#000000',
+      lineWidth: 2
     }
   });
 };
@@ -65,7 +67,9 @@ export const createDog = ({ x, y, size = 'medium' }: { x: number, y: number, siz
     density,
     restitution: 0.2,
     render: {
-      fillStyle: '#8C6B4F'
+      fillStyle: '#8C6B4F',
+      strokeStyle: '#000000',
+      lineWidth: 2
     }
   });
 };
@@ -106,7 +110,9 @@ export const createObstacle = ({
     density,
     restitution,
     render: {
-      fillStyle
+      fillStyle,
+      strokeStyle: '#000000',
+      lineWidth: 2
     }
   });
   

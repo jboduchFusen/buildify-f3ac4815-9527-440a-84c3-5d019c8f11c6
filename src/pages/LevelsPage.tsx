@@ -30,6 +30,8 @@ const LevelsPage = () => {
             >
               <h3>Level {index + 1}</h3>
               <p>{level.name}</p>
+              <p>Cats: {level.catsCount}</p>
+              <p>Dogs: {level.dogs.length}</p>
               {index + 1 <= unlockedLevels ? (
                 <Link to={`/game/${level.id}`}>
                   <button className="primary-button">Play</button>

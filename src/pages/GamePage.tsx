@@ -65,13 +65,34 @@ const GamePage = () => {
       { 
         isStatic: true,
         render: {
-          fillStyle: '#3A5F0B'
+          fillStyle: '#3A5F0B',
+          strokeStyle: '#000000',
+          lineWidth: 2
         }
       }
     );
     
-    // Add ground to world
-    World.add(engine.world, [ground]);
+    // Create slingshot base (visual only)
+    const slingshotBase = Bodies.rectangle(
+      slingshotRef.current.x,
+      slingshotRef.current.y + 40,
+      20,
+      80,
+      {
+        isStatic: true,
+        render: {
+          fillStyle: '#8B4513',
+          strokeStyle: '#000000',
+          lineWidth: 2
+        },
+        collisionFilter: {
+          group: -1  // Don't collide with anything
+        }
+      }
+    );
+    
+    // Add ground and slingshot to world
+    World.add(engine.world, [ground, slingshotBase]);
     
     // Create level elements
     setupLevel(level, engine);
