@@ -280,3 +280,67 @@ button {
   margin: 30px 0;
   color: #000000;
 }
+
+/* Cat Character Animations */
+.cat-character {
+  transform-origin: center;
+}
+
+/* Idle animation - subtle breathing effect */
+@keyframes cat-idle {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+}
+
+.cat-idle {
+  animation: cat-idle 2s ease-in-out infinite;
+}
+
+/* Bounce animation - for menu/selection */
+@keyframes cat-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.cat-bounce {
+  animation: cat-bounce 0.6s ease-in-out infinite;
+}
+
+/* Wiggle animation - for slingshot pulling */
+@keyframes cat-wiggle {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-5deg);
+  }
+  75% {
+    transform: rotate(5deg);
+  }
+}
+
+.cat-wiggle {
+  animation: cat-wiggle 0.3s ease-in-out infinite;
+}
+
+/* Flying animation - rotation during flight */
+@keyframes cat-flying {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.cat-flying {
+  animation: cat-flying 1s linear infinite;
+}
