@@ -107,21 +107,101 @@
 
 ### Task 3: Create Character SVG Components
 **Description**: Build simple SVG cat and dog character illustrations
+**Status**: IN PROGRESS
 **Estimated Size**: 150 LOC × 10 = 1,500 tokens
 **Execution Strategy**:
 - Create CatCharacter.tsx component with SVG
 - Create DogCharacter.tsx component with SVG
 - Add animation props for movement
-**Dependencies**: Task 1
+**Dependencies**: None (SVG components are self-contained)
+
+**Detailed Subtasks**:
+- **3.1**: CatCharacter SVG component with cartoon styling
+  - Orange/ginger cat with round features
+  - Expressive eyes and whiskers
+  - Tail and body proportions suitable for "launching"
+  - Size: ~60 LOC
+  
+- **3.2**: DogCharacter SVG component with enemy appearance
+  - Brown/gray dog with angular features
+  - Grumpy or defensive expression
+  - Sitting or standing pose
+  - Size: ~60 LOC
+  
+- **3.3**: TypeScript interfaces for props
+  - Position (x, y coordinates)
+  - Scale factor
+  - Animation state (idle, bounce, wiggle)
+  - Optional className for custom styling
+  - Size: ~15 LOC
+  
+- **3.4**: CSS animations in App.css
+  - @keyframes for bounce effect
+  - @keyframes for wiggle/shake effect
+  - @keyframes for float effect
+  - Size: ~15 LOC
+
+**Implementation Notes**:
+- Use viewBox for scalability
+- Keep path complexity low for performance
+- Use CSS variables for colors to match theme
+- Default size: 100x100 viewBox, scalable via props
 
 ### Task 4: Build Feature Cards Component
 **Description**: Create reusable feature card components to showcase game features
+**Status**: IN PROGRESS
 **Estimated Size**: 100 LOC × 10 = 1,000 tokens
 **Execution Strategy**:
 - Create FeatureCard.tsx component
 - Add icons using lucide-react
 - Style with hover effects and shadows
-**Dependencies**: Task 2
+**Dependencies**: None (includes own scoped animations)
+
+**Detailed Subtasks**:
+- **4.1**: FeatureCard component structure
+  - TypeScript interface: title, description, icon, color
+  - Flexible layout with icon at top
+  - Semantic HTML structure
+  - Size: ~40 LOC
+  
+- **4.2**: Icon integration from lucide-react
+  - Zap icon for "Physics-Based Gameplay"
+  - Trophy icon for "Multiple Levels"
+  - Cat icon for "Unique Characters"
+  - Icon size and color props
+  - Size: ~10 LOC
+  
+- **4.3**: Card styling in App.css
+  - Base card styles (padding, border-radius, background)
+  - Box shadow with depth
+  - Gradient backgrounds per card type
+  - Size: ~30 LOC
+  
+- **4.4**: Hover effects and transitions
+  - Transform on hover (translateY, scale)
+  - Shadow enhancement on hover
+  - Icon animation on hover
+  - Smooth transitions (0.3s ease)
+  - Size: ~20 LOC
+
+**Card Specifications**:
+1. **Physics Card**
+   - Icon: Zap (lightning bolt)
+   - Color: Electric blue (#4ecdc4)
+   - Title: "Physics-Based Gameplay"
+   - Description: "Realistic physics for challenging shots"
+
+2. **Levels Card**
+   - Icon: Trophy
+   - Color: Gold/Warning (#ffd166)
+   - Title: "Multiple Levels"
+   - Description: "Progress through exciting challenges"
+
+3. **Characters Card**
+   - Icon: Cat
+   - Color: Primary red (#ff6b6b)
+   - Title: "Unique Characters"
+   - Description: "Launch different cats with special abilities"
 
 ### Task 5: Enhance HomePage Layout
 **Description**: Restructure HomePage with new visual elements and layout
