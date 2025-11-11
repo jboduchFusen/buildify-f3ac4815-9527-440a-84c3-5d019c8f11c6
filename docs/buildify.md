@@ -117,10 +117,67 @@
 
 **Detailed Subtasks**:
 - **3.1**: CatCharacter SVG component with cartoon styling
-  - Orange/ginger cat with round features
-  - Expressive eyes and whiskers
-  - Tail and body proportions suitable for "launching"
-  - Size: ~60 LOC
+  **Status**: READY FOR IMPLEMENTATION
+  **Size**: ~60 LOC component + ~15 LOC CSS = 75 LOC total
+  
+  **Atomic Breakdown**:
+  - **3.1.1**: TypeScript interface definition (10 LOC)
+    - Props: className, scale, animationState
+    - Animation state type: 'idle' | 'bounce' | 'wiggle' | 'flying'
+    - Default values and optional position props
+    
+  - **3.1.2**: SVG cat structure design (40 LOC)
+    - ViewBox: 0 0 100 100
+    - Body: Rounded oval (#ff8c42 orange)
+    - Head: Circle with triangular ears
+    - Face: Large eyes, pink nose, whiskers
+    - Tail: Curved with stripes
+    - Limbs: Simple rounded shapes
+    - Bold black outlines (2px stroke)
+    
+  - **3.1.3**: Color palette implementation (5 LOC)
+    - Primary: #ff8c42 (orange body)
+    - Accent: #ff6b6b (stripes/details)
+    - Eyes: White with black pupils
+    - Nose: #ffb3d9 (pink)
+    - Outline: #000000 (2px)
+    
+  - **3.1.4**: Animation state support (5 LOC)
+    - Conditional className based on animationState
+    - CSS classes: cat-idle, cat-bounce, cat-wiggle, cat-flying
+    - Transform origin centered
+  
+  **Design Specifications**:
+  - Style: Cute, round features, big expressive eyes
+  - Proportions: Head 40% of body, tail 50% of body length
+  - Expression: Happy/determined (launch-ready)
+  - Pose: Sitting/crouched position
+  - Details: Tail stripes, whiskers, inner ear shading
+  
+  **SVG Layer Order** (bottom to top):
+  1. Tail (behind body)
+  2. Body (main oval)
+  3. Back legs
+  4. Head (circle with ears)
+  5. Face features (eyes, nose, whiskers)
+  6. Front legs
+  
+  **CSS Animations** (App.css):
+  - `.cat-idle`: Breathing effect (scale 1 to 1.02, 2s loop)
+  - `.cat-bounce`: Bounce for menu (translateY, 0.6s ease)
+  - `.cat-wiggle`: Shake in slingshot (rotate ±5deg, 0.3s)
+  - `.cat-flying`: Rotation during flight (rotate 360deg, 1s linear)
+  
+  **Files to Create/Update**:
+  - CREATE: src/components/CatCharacter.tsx (~60 LOC)
+  - UPDATE: src/App.css - Add keyframes (~15 LOC)
+  
+  **Testing Checklist**:
+  - [ ] Renders at scale 0.5x, 1x, 2x
+  - [ ] All animation states work
+  - [ ] Colors match design system
+  - [ ] Responsive on mobile
+  - [ ] No performance issues
   
 - **3.2**: DogCharacter SVG component with enemy appearance
   - Brown/gray dog with angular features
