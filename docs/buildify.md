@@ -180,10 +180,13 @@
   - [ ] No performance issues
   
 - **3.2**: DogCharacter SVG component with enemy appearance
-  - Brown/gray dog with angular features
-  - Grumpy or defensive expression
-  - Sitting or standing pose
-  - Size: ~60 LOC
+  **Status**: COMPLETED
+  - Brown dog with angular features
+  - Grumpy/angry expression with eyebrows
+  - Standing defensive pose
+  - Red spiked collar for enemy appearance
+  - Showing teeth for aggression
+  - Size: ~240 LOC (component) + ~40 LOC (CSS animations)
   
 - **3.3**: TypeScript interfaces for props
   - Position (x, y coordinates)
