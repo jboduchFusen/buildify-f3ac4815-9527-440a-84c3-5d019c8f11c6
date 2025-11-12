@@ -5,6 +5,7 @@ import { Toaster } from 'sonner';
 import GamePage from './pages/GamePage';
 import HomePage from './pages/HomePage';
 import LevelsPage from './pages/LevelsPage';
+import TutorialPage from './pages/TutorialPage';
 import NotFoundPage from './pages/NotFoundPage';
 import './App.css';
 
@@ -16,6 +17,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/tutorial" element={<TutorialPage />} />
           <Route path="/game/:levelId" element={<GamePage />} />
           <Route path="/levels" element={<LevelsPage />} />
           <Route path="*" element={<NotFoundPage />} />

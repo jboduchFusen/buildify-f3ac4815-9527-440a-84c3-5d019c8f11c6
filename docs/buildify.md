@@ -367,6 +367,7 @@ A: Cartoon-style game environment with bright colors - possibly a playful outdoo
 
 ### Pages
 - ✅ src/pages/HomePage.tsx
+- ✅ src/pages/TutorialPage.tsx - Interactive step-by-step tutorial
 - ✅ src/pages/GamePage.tsx
 - ✅ src/pages/LevelsPage.tsx
 - ✅ src/pages/NotFoundPage.tsx

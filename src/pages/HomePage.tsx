@@ -30,7 +30,7 @@ const HomePage = () => {
               <Link to="/levels">
                 <button className="primary-button play-button">Play Game</button>
               </Link>
-              <Link to="/game/tutorial">
+              <Link to="/tutorial">
                 <button className="secondary-button tutorial-button">Tutorial</button>
               </Link>
             </div>
