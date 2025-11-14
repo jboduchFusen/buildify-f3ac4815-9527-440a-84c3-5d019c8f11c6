@@ -376,8 +376,213 @@ A: Cartoon-style game environment with bright colors - possibly a playful outdoo
 - ✅ src/game/entities.ts
 - ✅ src/game/levels.ts
 
+## Testing Tasks
+
+### Task 8: Tutorial Flow and Navigation Testing
+**Description**: Comprehensive testing of TutorialPage component functionality and user experience
+**Status**: READY FOR TESTING
+**Estimated Size**: Manual testing + potential bug fixes (50 LOC × 10 = 500 tokens)
+**Execution Strategy**:
+- Manual testing of all navigation paths
+- Verify responsive behavior
+- Check accessibility features
+- Document bugs and improvements
+**Dependencies**: TutorialPage.tsx (completed)
+
+**Detailed Test Cases**:
+
+#### 8.1: Navigation Flow Testing
+**Objective**: Verify all navigation controls work correctly
+**Test Steps**:
+1. **Initial State**
+   - [ ] Page loads on step 1 of 4
+   - [ ] Previous button is disabled
+   - [ ] Next button is enabled
+   - [ ] Progress bar shows 25%
+   - [ ] First dot is active
+   
+2. **Forward Navigation**
+   - [ ] Click Next button → advances to step 2
+   - [ ] Progress bar updates to 50%
+   - [ ] Second dot becomes active
+   - [ ] Previous button becomes enabled
+   - [ ] Content changes to step 2
+   
+3. **Backward Navigation**
+   - [ ] Click Previous button → returns to step 1
+   - [ ] Progress bar returns to 25%
+   - [ ] First dot becomes active
+   - [ ] Previous button becomes disabled
+   
+4. **Dot Navigation**
+   - [ ] Click dot 3 → jumps to step 3
+   - [ ] Click dot 1 → jumps back to step 1
+   - [ ] All dots are clickable and responsive
+   
+5. **Final Step Behavior**
+   - [ ] Navigate to step 4
+   - [ ] Next button is replaced with "Start Practice Level" button
+   - [ ] Button links to /game/tutorial
+   - [ ] Progress bar shows 100%
+
+**Expected Results**: All navigation controls function smoothly with proper state updates
+
+#### 8.2: Content Display Testing
+**Objective**: Verify all tutorial content displays correctly
+**Test Steps**:
+1. **Step 1 Content**
+   - [ ] Title: "Welcome to Angry Cats!"
+   - [ ] Target icon displays
+   - [ ] Description text is readable
+   - [ ] No tip section (as per design)
+   
+2. **Step 2 Content**
+   - [ ] Title: "How to Launch"
+   - [ ] Hand icon displays
+   - [ ] Description explains drag mechanics
+   - [ ] Tip about weak points displays
+   
+3. **Step 3 Content**
+   - [ ] Title: "Cat Types"
+   - [ ] Zap icon displays
+   - [ ] Description covers all cat types
+   - [ ] Tip about experimentation displays
+   
+4. **Step 4 Content**
+   - [ ] Title: "Winning & Scoring"
+   - [ ] Target icon displays
+   - [ ] Description explains victory conditions
+   - [ ] Tip about efficiency displays
+
+**Expected Results**: All content renders correctly with proper formatting
+
+#### 8.3: Responsive Design Testing
+**Objective**: Verify tutorial works on different screen sizes
+**Test Steps**:
+1. **Desktop (1920x1080)**
+   - [ ] Layout is centered and well-spaced
+   - [ ] Navigation buttons are side-by-side
+   - [ ] Icons are appropriately sized
+   - [ ] Text is readable
+   
+2. **Tablet (768x1024)**
+   - [ ] Layout adapts to narrower width
+   - [ ] Content remains readable
+   - [ ] Touch targets are adequate
+   
+3. **Mobile (375x667)**
+   - [ ] Navigation buttons stack vertically
+   - [ ] Step card min-height adjusts
+   - [ ] Font sizes scale appropriately
+   - [ ] Dots remain visible and clickable
+
+**Expected Results**: Tutorial is fully functional and visually appealing on all screen sizes
+
+#### 8.4: Link and Route Testing
+**Objective**: Verify all links navigate correctly
+**Test Steps**:
+1. **Back to Home Link**
+   - [ ] Click "Back to Home" → navigates to /
+   - [ ] Hover effect works
+   - [ ] Icon and text align properly
+   
+2. **Start Practice Level Link**
+   - [ ] Appears only on step 4
+   - [ ] Click → navigates to /game/tutorial
+   - [ ] Tutorial level loads correctly
+   
+3. **Skip Tutorial Link**
+   - [ ] Click "Skip tutorial and go to levels" → navigates to /levels
+   - [ ] Link is visible on all steps
+   - [ ] Hover effect works
+
+**Expected Results**: All links navigate to correct routes without errors
+
+#### 8.5: Animation and Visual Effects Testing
+**Objective**: Verify animations enhance user experience
+**Test Steps**:
+1. **Icon Animations**
+   - [ ] Icons have float animation
+   - [ ] Animation is smooth (no jank)
+   - [ ] Animation doesn't distract from content
+   
+2. **Progress Bar Animation**
+   - [ ] Smooth transition when changing steps
+   - [ ] Gradient displays correctly
+   - [ ] Width updates accurately
+   
+3. **Button Hover Effects**
+   - [ ] Hover changes background color
+   - [ ] Transform effects work (translateX/Y)
+   - [ ] Transitions are smooth
+   
+4. **Dot Transitions**
+   - [ ] Active dot expands smoothly
+   - [ ] Inactive dots scale on hover
+   - [ ] Color transitions work
+
+**Expected Results**: All animations are smooth and purposeful
+
+#### 8.6: Accessibility Testing
+**Objective**: Ensure tutorial is accessible to all users
+**Test Steps**:
+1. **Keyboard Navigation**
+   - [ ] Tab key navigates through interactive elements
+   - [ ] Enter/Space activates buttons
+   - [ ] Focus indicators are visible
+   - [ ] Tab order is logical
+   
+2. **Screen Reader Support**
+   - [ ] Step numbers are announced
+   - [ ] Button states (disabled) are announced
+   - [ ] Dot buttons have aria-labels
+   - [ ] Content hierarchy is logical
+   
+3. **Color Contrast**
+   - [ ] Text meets WCAG AA standards
+   - [ ] Button text is readable
+   - [ ] Disabled states are distinguishable
+
+**Expected Results**: Tutorial is fully accessible via keyboard and screen readers
+
+#### 8.7: Edge Cases and Error Handling
+**Objective**: Test unusual scenarios
+**Test Steps**:
+1. **Direct URL Access**
+   - [ ] Navigate directly to /tutorial → loads correctly
+   - [ ] Starts on step 1
+   
+2. **Browser Back/Forward**
+   - [ ] Browser back button works
+   - [ ] Browser forward button works
+   - [ ] State is maintained
+   
+3. **Rapid Clicking**
+   - [ ] Rapid Next clicks don't break state
+   - [ ] Rapid dot clicks work correctly
+   - [ ] No console errors
+
+**Expected Results**: Tutorial handles edge cases gracefully
+
+### Bug Tracking Template
+**If issues are found during testing:**
+
+| Bug ID | Severity | Component | Description | Steps to Reproduce | Expected | Actual |
+|--------|----------|-----------|-------------|-------------------|----------|--------|
+| T-001 | High/Med/Low | Navigation | [Description] | [Steps] | [Expected] | [Actual] |
+
+### Potential Improvements Identified
+**Based on testing, consider:**
+1. Add keyboard shortcuts (arrow keys for navigation)
+2. Add progress save to localStorage
+3. Add "Mark as complete" functionality
+4. Add visual preview images for each step
+5. Add animation when transitioning between steps
+6. Add sound effects for button clicks (optional)
+
 ## Next Steps
-1. Continue with Task 4: Build FeatureCard component
-2. Complete Task 5: Enhance HomePage layout with characters and features
-3. Add interactive animations (Task 6)
-4. Optimize for mobile responsiveness (Task 7)
+1. **IMMEDIATE**: Perform manual testing of Task 8 (Tutorial Flow Testing)
+2. Document any bugs found using Bug Tracking Template
+3. Fix critical bugs if discovered
+4. Continue with Task 4: Build FeatureCard component
+5. Complete Task 5: Enhance HomePage layout with characters and features
